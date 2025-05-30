@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}TANGERINE{% endblock %}</title>
+        <link rel="stylesheet" href="/static/styles-menu.css">
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        <button class="menu-button" id="MenuButton">
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+        </button>
+
+        <div class="content">
+            <h1 onclick="window.location.href='/'">TANGERINE</h1>
+        </div>
+
+        <div class="menu-overlay" id="MenuOverlay"></div>
+        <div class="menu-content" id="MenuContent">
+            <button class="close-menu" id="closeMenu">&times;</button>
+            <ul class="menu-list">
+                <li class="menu-item" onclick="window.location.href='/category/outwear'">ВЕРХНЯЯ ОДЕЖДА</li>
+                <li class="menu-item" onclick="window.location.href='/category/dress | overalls'">ПЛАТЬЯ | КОМБИНЕЗОНЫ</li>
+                <li class="menu-item" onclick="window.location.href='/category/trousers | jeans'">БРЮКИ | ДЖИНСЫ</li>
+                <li class="menu-item" onclick="window.location.href='/category/suits'">КОСТЮМЫ</li>
+                <li class="menu-item" onclick="window.location.href='/category/skirts'">ЮБКИ</li>
+                <li class="menu-item" onclick="window.location.href='/category/sweatshirts'">ТОЛСТОВКИ</li>
+                <li class="menu-item" onclick="window.location.href='/category/home clothes'">ОДЕЖДА ДЛЯ ДОМА</li>
+                <li class="menu-item" onclick="window.location.href='/category/accessories'">АКСЕССУАРЫ</li>
+                <li class="menu-item" onclick="window.location.href='/category/shoes'">ОБУВЬ</li>
+                <li class="menu-item" onclick="window.location.href='/category/bags'">СУМКИ</li>
+            </ul>
+        </div>
+
+        {% block content %}{% endblock %}
+
+        <footer>
+            <div class="footer-section">
+                <h3>ПОДПИСКА НА РАССЫЛКУ</h3>
+                <button class="subscribe-btn">ПОДПИСАТЬСЯ</button>
+            </div>
+
+            <div class="footer-section">
+                <h3>ПОМОЩЬ</h3>
+                <ul>
+                    <li><a href="#">Сделать покупку в TANGERINE</a></li>
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">Обмен и возврат</a></li>
+                    <li><a href="#">Подарочная карта</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>КОНТАКТЫ</h3>
+                <ul>
+                    <li><a href="#">Рассылка</a></li>
+                    <li><a href="#">Обратная связь</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>КОМПАНИЯ</h3>
+                <ul>
+                    <li><a href="#">О комапании</a></li>
+                    <li><a href="#">Магазины</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <script src="/static/menu-btn-base.js"></script>
+
+        {% block scripts %}{% endblock %}
+
+    </body>
+</html>

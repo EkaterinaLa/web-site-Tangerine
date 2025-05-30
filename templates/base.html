@@ -1,0 +1,38 @@
+{% extends "menu-btn-base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/styles_base.css">
+{% endblock %}
+
+{% block content %}
+    {% if subtitle %}
+            <h2>{{ subtitle }}</h2>
+    {% endif %}
+
+    <button class="bin-btn" title="Просмотр корзины" onclick="window.location.href='/bin'">
+        <img src="/static/bin-black.png" alt="Кнопка" class="image-bin-btn">
+    </button>
+
+    <div class="product-container">
+        {% for product in goods %}
+        <div class="product-card">
+            <img src="{{ product[5] }}" alt="{{ product[1] }}" class="product-image">
+            <div class="product-info">
+                <div class="product-name">{{ product[1] }}</div>
+                <div class="product-price">{{ product[2] }}₽</div>
+                <div class="product-description">{{ product[4] }}</div>
+                <form action="/add_to_bin" method="post">
+                    <input type="hidden" name="product_id" value="{{ product[0] }}">
+                    <input type="hidden" name="product_name" value="{{ product[1] }}">
+                    <input type="hidden" name="product_price" value="{{ product[2] }}">
+                    <input type="hidden" name="product_category" value="{{ product[3] }}">
+                    <input type="hidden" name="product_image" value="{{ product[5] }}">
+                    <button type="submit" class="add-to-bin-btn">Добавить в корзину</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

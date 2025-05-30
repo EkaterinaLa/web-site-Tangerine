@@ -1,0 +1,73 @@
+{% extends 'menu-btn-base.html' %}
+
+{% block title %}Корзина{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/styles_bin.css">
+
+{% endblock %}
+
+{% block content %}
+    <h2>КОРЗИНА</h2>
+    {% if cart %}
+    <div class="product-container">
+        {% for product in cart %}
+        <div class="product-card">
+            <img src="{{ product.image }}" alt="{{ product.name }}" class="product-image">
+            <div class="product-info">
+                <div class="product-name">{{ product.name }}</div>
+                <div class="product-price">{{ product.price }}₽</div>
+                <div class="product-description">{{ product.description }}</div>
+                <form action="/remove_from_bin/{{ product.id }}" method="post">
+                    <button type="submit" class="delete-from-bin-btn">Удалить</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+        <button onclick="openOrderModal()" class="order-btn">ОФОРМИТЬ ЗАКАЗ</button>
+
+        <div id="orderModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h1>Оформление заказа</h1>
+                
+                <div class="order-summary">
+                    <p>Товаров: {{ cart|length }}</p>
+                    <p>Общая сумма: {{ cart|sum(attribute='price') }}₽</p>
+                </div>
+                
+                <form onsubmit="return submitOrder()">
+                    <div class="form-group">
+                        <label for="name">ФИО:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Адрес доставки:</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    
+                    <button type="submit" class="pay-btn">ОПЛАТИТЬ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="empty-bin">
+        <img src="/static/empty-bin.png">
+        <label>ВАША КОРЗИНА ПУСТА</label>
+        <button type="button" id="return-btn">В МАГАЗИН</button>
+    </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/empty-bin-btn.js"></script>
+<script src="/static/full-bin.js"></script>
+{% endblock %}
