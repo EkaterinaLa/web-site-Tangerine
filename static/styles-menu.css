@@ -1,0 +1,159 @@
+.menu-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 20px;
+    display: inline-block;
+}
+
+.menu-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: black;
+    margin: 5px 0;
+}
+  
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.menu-open .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-content {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: 0.3s;
+    overflow-y: auto;
+    padding-top: 70px;
+}
+  
+.close-menu {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+}
+  
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    padding: 15px 25px;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #333;
+    transition: 0.2s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu-item:hover {
+    background: white;
+    color: black;
+    background-color: #f0f0f0;
+}
+
+.menu-open .menu-content {
+    left: 0;
+}
+
+.content {
+    display: inline-block;
+    align-items: baseline;
+    margin-left: 20px;
+}
+
+.content h1 {
+    color: black;
+    font-size: 48px;
+    font-family: serif;
+    text-align: left;
+    user-select: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: black;
+    padding: 40px 20px;
+    font-family: serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    height: 200px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 15px 30px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-section a:hover {
+    color: gray;
+}
+
+.news {
+    flex: 2;
+    min-width: 300px; 
+}
+
+.subscribe-btn {
+    background-color: #000;
+    color: white;
+    border: 1px solid #ddd;
+    padding: 12px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}

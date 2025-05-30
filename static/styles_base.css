@@ -1,0 +1,113 @@
+h2 {
+    color: black;
+    font-size: 40px;
+    font-family: serif;
+    text-align: left;
+    user-select: none;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-left: 93px;
+    z-index: 99;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 30px;
+    padding: 20px;
+}
+
+.product-card {
+    width: 460px;
+    height: 750px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    display: flex;              
+    flex-direction: column;     
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: serif;
+    margin-bottom: 8px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: serif;
+    color: black;
+    margin-bottom: 12px;
+}
+
+.product-description {
+    font-size: 14px;
+    font-family: serif;
+    color: #555;
+    line-height: 1.5;
+}
+
+.add-to-bin-btn {
+    background-color: #000; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    width: calc(100% - 40px); 
+    margin: 0 20px 20px 20px;
+    cursor: pointer;
+    margin-top: auto;
+    border-radius: 4px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.add-to-bin-btn:hover {
+    background-color: #333;;
+}
+
+.bin-btn {
+    display: inline;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 1430px;
+    z-index: 100;
+    position: absolute;
+    top: 50px;
+}
+
+.image-bin-btn {
+    width: 33px;
+    height: 33px;
+    object-fit: contain;
+}
